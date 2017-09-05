@@ -6,11 +6,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Chart from '../components/Chart'
 class WeatherList extends Component {
-    constructor(props){
-        super(props)
-    }
     renderWeather(cityData,i){
-        const temps = cityData.list.map(weather=>weather.main.temp)
+        const temps = cityData.list.map(weather=>((weather.main.temp-273.15)*1.8)+32)
         const pressure = cityData.list.map(weather=>weather.main.pressure)
         const humidity = cityData.list.map(weather=>weather.main.humidity)
         return (
@@ -19,13 +16,13 @@ class WeatherList extends Component {
                     {cityData.city.name}
                 </td>
                 <td>
-                    <Chart data={temps} color={'red'}/>
+                    <Chart data={temps} color={'red'} units={'F'}/>
                 </td>
                 <td>
-                    <Chart data={pressure} color={'green'}/>
+                    <Chart data={pressure} color={'green'} units={'hPa'}/>
                 </td>
                 <td>
-                    <Chart data={humidity} color={'orange'}/>
+                    <Chart data={humidity} color={'orange'} units={'%'}/>
                 </td>
             </tr>
         )
@@ -40,18 +37,17 @@ class WeatherList extends Component {
                         City
                     </th>
                     <th>
-                        Temparature
+                        Temparature(F)
                     </th>
                     <th>
-                        Pressure
+                        Pressure(hPa)
                     </th>
                     <th>
-                        Humidity
+                        Humidity(%)
                     </th>
                 </tr>
                 </thead>
                 <tbody>
-                    {console.log(this.props)}
                     {this.props.weather.map(this.renderWeather)}
                 </tbody>
             </table>
