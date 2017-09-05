@@ -1,7 +1,7 @@
 {
   "name": "weather-report",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "weather-report project using react-redux",
   "main": "index.js",
   "repository": "git@github.com:sravan464/weather-report.git",
   "scripts": {

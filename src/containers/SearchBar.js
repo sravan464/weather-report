@@ -26,7 +26,7 @@ class SearchBar extends Component {
     }
     render() {
         return (
-            <form onSubmit={this.onFormSubmit} className="form-inline">
+            <form onSubmit={this.onFormSubmit} style={{width:'610px',marginTop:'12px',marginRight:'-222px'}} className="form-inline navbar-right">
                 <input style={{width:'50%'}}
                     type="text"
                        value={this.state.term}

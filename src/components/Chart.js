@@ -19,7 +19,7 @@ function Chart(props) {
                 <SparklinesSpots />
             </Sparklines>
             <div>
-                {"avg:"+avg(props.data) + ",max:"+_.round(_.max(props.data)) +",min:"+_.round(_.min(props.data))}
+                <h6>Avg <span className="badge">{avg(props.data)}</span> Max <span className="badge">{_.round(_.max(props.data))}</span>Min <span className="badge">{_.round(_.min(props.data))}</span></h6>
             </div>
         </div>
     );
