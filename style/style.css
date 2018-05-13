@@ -2,3 +2,7 @@ td{
     height:150px;
     width: 200px;
 }
+td,th{
+    vertical-align: middle !important;
+    text-align: center !important;
+}

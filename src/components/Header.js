@@ -22,7 +22,4 @@ function Header(props) {
         </nav>
     );
 }
-
-
-
 export default Header;
